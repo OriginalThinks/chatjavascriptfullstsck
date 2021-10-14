@@ -11,7 +11,9 @@ const io = socketio(server);
 
 // DB connection
 mongoose
-  .connect("mongodb+srv://cluster0.0zqad.mongodb.net/chat-database")
+  .connect(
+    "mongodb+srv://originalthinks:<password>@cluster0.0zqad.mongodb.net/chat-database?retryWrites=true&w=majority"
+  )
   .then((db) => console.log("db is connected"))
   .catch((err) => console.log(err));
 
