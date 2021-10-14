@@ -10,9 +10,10 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 // DB connection
-mongoose.connect('mongodb://localhost/chat-database')
-    .then(db => console.log('db is connected'))
-    .catch(err => console.log(err));
+mongoose
+  .connect("mongodb+srv://cluster0.0zqad.mongodb.net/chat-database")
+  .then((db) => console.log("db is connected"))
+  .catch((err) => console.log(err));
 
 // Settings
 app.set('port', process.env.PORT || 3000);
